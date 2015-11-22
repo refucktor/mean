@@ -1,0 +1,15 @@
+doctype html
+html(lang='en', ng-app='cuba.weekly')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, user-scalable=no')
+    title cubaweekly
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    script(src="/jquery.min.js")
+    script(src="/angular.js")
+    script(src="/angular-route.js")
+    script(src="/frontend/module.js")
+    script(src="/frontend/controllers.js")
+    script(src="/frontend/services.js")
+  body(ng-controller="CWController")
+    block content
