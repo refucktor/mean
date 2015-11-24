@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('cuba.weekly')
+        .module('corner')
         .controller('CWController', CWController);
 
     function CWController (cw_services) {
@@ -21,7 +21,8 @@
                 .then(onGetUsersSuccess);
         }
         function onGetUsersSuccess (retrievedData) {
-            $$.users = retrievedData[0].username;
+            console.log(retrievedData);
+            $$.users = retrievedData;
             //console.log($$.comments);
         }
 

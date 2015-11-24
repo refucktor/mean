@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('cuba.weekly')
+        .module('corner')
         .factory('cw_services', cw_services);
 
     function cw_services($http){
@@ -15,7 +15,7 @@
 
         function getUsers() {
             return $http
-                .get('/api/users')
+                .get('/api/perf')
                 .then(function(response){
                     return response.data;
                 });
