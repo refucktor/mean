@@ -1,6 +1,7 @@
-var mongoose = require('mongoose');
+var mongoose = require('mongoose'), Schema = mongoose.Schema;
 
-var PerformanceSchema = new mongoose.Schema({
+
+var PerformanceSchema = new Schema({
     gols        : { type: Number, default: 0 },
     assistances : { type: Number, default: 0 },
     yellowCards : { type: Number, default: 0 },
@@ -12,7 +13,7 @@ var PerformanceSchema = new mongoose.Schema({
     gols_neg    : { type: Number, default: 0 }
 });
 
-var PlayerSchema = new mongoose.Schema({
+var PlayerSchema = new Schema({
     name       : { type: String, unique: true, require: true },
     firstName  : { type: String, require: true },
     lastName   : { type: String, require: true },
@@ -20,15 +21,15 @@ var PlayerSchema = new mongoose.Schema({
     data       : { selection : String, club : String, number : Number },
     init_value : { type: Number, require: true },
     act_value  : { type: Number, require: false},
-    performance: { type: mongoose.Schema.ObjectId, ref: 'Performance'}
+    performance: { type: Schema.ObjectId, ref: 'Performance'}
 });
 
-var UserSchema = new mongoose.Schema({
+var UserSchema = new Schema({
     username : { type: String, trim: true ,unique : true, require: true },
     name     : { type: String, require: true },
     lastName : { type: String, require: true },
     sex      : { type: String, require: true },
-    players  : {type: mongoose.Schema.ObjectId, ref: 'Player'}
+    players  : {type: Schema.ObjectId, ref: 'Player'}
 });
 
 module.exports = {
