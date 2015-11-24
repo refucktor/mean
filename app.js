@@ -9,7 +9,7 @@ var path = require('path');
 var logger = require('morgan'); 		// log requests to the console (express4)
 var bodyParser = require('body-parser'); 	// pull information from HTML POST (express4)
 var cookieParser = require('cookie-parser');
-var methodOverride = require('method-override'); // simulate DELETE and PUT (express4)
+var methodOverride = require('method-override'); // simulate DELETE   and PUT (express4)
 //var angular = require('angular');
 //var favicon = require('serve-favicon');
 

@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('cuba.weekly', [
+        .module('corner', [
             'ngRoute'
         ])
         .config(config);
