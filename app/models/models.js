@@ -18,6 +18,7 @@ var PlayerSchema = new Schema({
     firstName  : { type: String, require: true },
     lastName   : { type: String, require: true },
     pos        : { type: String, enum: ['DEL', 'MED', 'DEF', 'POR', 'TEC'] },
+    avatar: {type: String},
     data       : { selection : String, club : String, number : Number },
     init_value : { type: Number, require: true },
     act_value  : { type: Number, require: false},
@@ -29,7 +30,12 @@ var UserSchema = new Schema({
     name     : { type: String, require: true },
     lastName : { type: String, require: true },
     sex      : { type: String, require: true },
-    team: [{player: {type: Schema.ObjectId, ref: 'Player'}, reg: {type: Boolean}}]
+    team: {
+        del: [{player: {type: Schema.ObjectId, ref: 'Player'}, reg: {type: Boolean}}],
+        med: [{player: {type: Schema.ObjectId, ref: 'Player'}, reg: {type: Boolean}}],
+        def: [{player: {type: Schema.ObjectId, ref: 'Player'}, reg: {type: Boolean}}],
+        por: [{player: {type: Schema.ObjectId, ref: 'Player'}, reg: {type: Boolean}}]
+    }
 });
 
 module.exports = {

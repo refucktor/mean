@@ -35,10 +35,9 @@ module.exports = function(app){
         var user = new User();
         user.username = "hmvalcarcel";
         user.name = "Hector Manuel";
-        user.team = [];
         Player.find({pos: 'DEL'}, null, {limit: 4}, function (err, data) {
             for (var i = 0; i < data.length; i++) {
-                user.team.push({player: data[i]._id, reg: true});
+                user.team.del.push({player: data[i]._id, reg: true});
 
             }
             user.save(function (err) {
@@ -48,7 +47,7 @@ module.exports = function(app){
         console.log(user.team);
         Player.find({pos: 'MED'}, null, {limit: 4}, function (err, data) {
             for (var i = 0; i < data.length; i++) {
-                user.team.push({player: data[i], reg: true})
+                user.team.med.push({player: data[i], reg: true})
 
             }
             user.save(function (err) {
@@ -57,7 +56,7 @@ module.exports = function(app){
         });
         Player.find({pos: 'DEF'}, null, {limit: 5}, function (err, data) {
             for (var i = 0; i < data.length; i++) {
-                user.team.push({player: data[i]._id, reg: true})
+                user.team.def.push({player: data[i]._id, reg: true})
 
             }
             user.save(function (err) {
@@ -66,7 +65,7 @@ module.exports = function(app){
         });
         Player.find({pos: 'POR'}, null, {limit: 2}, function (err, data) {
             for (var i = 0; i < data.length; i++) {
-                user.team.push({player: data[i]._id, reg: true})
+                user.team.por.push({player: data[i]._id, reg: true})
 
             }
             user.save(function (err) {
