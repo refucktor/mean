@@ -4,6 +4,12 @@ var Performance = models.Performance;
 module.exports = function(app){
 
     // JSON API ----------------------------------------------------------------
+    // get home page
+    app.get('/', function (req, res) {
+        res.render('index');
+    });
+
+    // JSON API ----------------------------------------------------------------
     // get all users
     app.get('/api/users', function(req, res) {
         User.find(function (err, data) {
@@ -30,9 +36,5 @@ module.exports = function(app){
         })
     });
 
-    // JSON API ----------------------------------------------------------------
-    // get home page
-    app.get('/', function(req, res) {
-       res.render('index');
-    });
+
 };
