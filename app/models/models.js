@@ -14,7 +14,7 @@ var PerformanceSchema = new Schema({
 });
 
 var PlayerSchema = new Schema({
-    name       : { type: String, unique: true, require: true },
+    name: {type: String, require: true},
     firstName  : { type: String, require: true },
     lastName   : { type: String, require: true },
     pos        : { type: String, enum: ['DEL', 'MED', 'DEF', 'POR', 'TEC'] },
@@ -29,7 +29,7 @@ var UserSchema = new Schema({
     name     : { type: String, require: true },
     lastName : { type: String, require: true },
     sex      : { type: String, require: true },
-    players  : {type: Schema.ObjectId, ref: 'Player'}
+    team: [{player: {type: Schema.ObjectId, ref: 'Player'}, reg: {type: Boolean}}]
 });
 
 module.exports = {

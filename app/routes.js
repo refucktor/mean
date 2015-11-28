@@ -15,7 +15,6 @@ module.exports = function(app){
     app.get('/api/users', function(req, res) {
         User.find(function (err, data) {
             if(err) res.send(err);
-
             res.json(data);
         })
     });
@@ -30,11 +29,87 @@ module.exports = function(app){
         });
     });
     // JSON API ----------------------------------------------------------------
-    // get to create a user
-    app.get('/api/user', function(req, res) {
-        user.save(function(err){
-            if(err) console.log(err);
-        })
+    // get to a team for hmvalcarcels
+    app.get('/api/h', function (req, res) {
+        var del, med, def, por;
+        var user = new User();
+        user.username = "hmvalcarcel";
+        user.name = "Hector Manuel";
+        user.team = [];
+        Player.find({pos: 'DEL'}, null, {limit: 4}, function (err, data) {
+            for (var i = 0; i < data.length; i++) {
+                user.team.push({player: data[i]._id, reg: true});
+
+            }
+            user.save(function (err) {
+                if (err) console.log(err);
+            })
+        });
+        console.log(user.team);
+        Player.find({pos: 'MED'}, null, {limit: 4}, function (err, data) {
+            for (var i = 0; i < data.length; i++) {
+                user.team.push({player: data[i], reg: true})
+
+            }
+            user.save(function (err) {
+                if (err) console.log(err);
+            })
+        });
+        Player.find({pos: 'DEF'}, null, {limit: 5}, function (err, data) {
+            for (var i = 0; i < data.length; i++) {
+                user.team.push({player: data[i]._id, reg: true})
+
+            }
+            user.save(function (err) {
+                if (err) console.log(err);
+            })
+        });
+        Player.find({pos: 'POR'}, null, {limit: 2}, function (err, data) {
+            for (var i = 0; i < data.length; i++) {
+                user.team.push({player: data[i]._id, reg: true})
+
+            }
+            user.save(function (err) {
+                if (err) console.log(err);
+            })
+        });
+    });
+
+    // JSON API ----------------------------------------------------------------
+    // get autofill players
+    app.get('/api/fillplayers', function (req, res) {
+        for (var i = 0; i < 50; i++) {
+            var del = new Player();
+            del.name = "Cuco";
+            del.pos = 'DEL';
+            del.save(function (err) {
+                console.log(err);
+            })
+        }
+        for (var i = 0; i < 50; i++) {
+            var del = new Player();
+            del.name = "Pepe";
+            del.pos = 'MED';
+            del.save(function (err) {
+                console.log(err);
+            })
+        }
+        for (var i = 0; i < 50; i++) {
+            var del = new Player();
+            del.name = "Lolo";
+            del.pos = 'DEF';
+            del.save(function (err) {
+                console.log(err);
+            })
+        }
+        for (var i = 0; i < 50; i++) {
+            var del = new Player();
+            del.name = "Yeyo";
+            del.pos = 'POR';
+            del.save(function (err) {
+                console.log(err);
+            })
+        }
     });
 
     // JSON API ----------------------------------------------------------------
@@ -49,5 +124,9 @@ module.exports = function(app){
         });
     });
 
+    // JSON API ----------------------------------------------------------------
+    // get myteam
+    app.get('/api/myteam', function (req, res) {
 
+    });
 };
