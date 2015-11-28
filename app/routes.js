@@ -127,6 +127,9 @@ module.exports = function(app){
     // JSON API ----------------------------------------------------------------
     // get myteam
     app.get('/api/myteam', function (req, res) {
-
+        User.findOne({}, 'team', {populate: "team.player", lean: true}, function (err, data) {
+            if (err) console.log(err);
+            res.json(data.team);
+        })
     });
 };
