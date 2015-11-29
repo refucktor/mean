@@ -1,5 +1,9 @@
 (function () {
-
-    $('.button-collapse').sideNav();
-
+    SideNav();
 })();
+
+function SideNav() {
+    $('.button-collapse').sideNav({
+        closeOnClick: true
+    });
+}
