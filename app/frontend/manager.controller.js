@@ -19,6 +19,8 @@
 
         function activate() {
             $$.getTeamPlayer = getTeamPlayer;
+
+            $$.showPlayerDetails = showPlayerDetails;
         }
 
         function getTeamPlayer (playerId) {
@@ -29,6 +31,11 @@
             function getTeamPlayerSuccess (data) {
                 $$.player = data;
             }
+        }
+
+        function showPlayerDetails(id) {
+            $$.player = getTeamPlayer(id);
+            $('#player-details').openModal();
         }
     }
 })();

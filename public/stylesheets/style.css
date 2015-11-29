@@ -1,5 +1,5 @@
 @import "animations.css";
-
+/***** Manager view *****/
 .field-container {
     margin-top: 1em;
     position: relative;
@@ -36,6 +36,37 @@ a.player > img {
     box-shadow: 2px 2px 4px 3px rgb(50, 50, 50);
 }
 
+.modal.bottom-sheet {
+    max-height: 80% !important;
+    overflow-y: visible !important;
+    text-align: center !important;
+}
+
+.modal.bottom-sheet > * {
+    position: relative;
+    top: -6em;
+}
+
+.modal.bottom-sheet > .modal-footer {
+    top: auto !important;
+    bottom: 0 !important;
+}
+
+.player-img {
+    height: 9em !important;
+    width: 9em !important;
+    padding: 0.3em 1.8em !important;
+}
+
+.modal.bottom-sheet > img {
+    position: relative;
+    /*top: -6em;*/
+    background: white;
+}
+
+/***** End Manager view *****/
+
+/***** Responsive *****/
 @media only screen and (min-width: 992px) {
     a.player > img {
         width: 5.8em;
@@ -102,3 +133,5 @@ a.player > img {
         margin-top: 1.5em;
     }
 }
+
+/***** End Responsive *****/
