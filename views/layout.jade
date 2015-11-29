@@ -21,8 +21,9 @@ html(lang='en', ng-app='corner')
     script(src="/frontend/profile.controller.js")
     script(src="/frontend/manager.controller.js")
 
-  body
+  body(class="grey lighten-3")
     include navbar
     block content
 
+    link(rel='stylesheet', href='/stylesheets/style.css')
     script(src="/scripts/setup.js")

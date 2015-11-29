@@ -1,8 +1,104 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+@import "animations.css";
+
+.field-container {
+    margin-top: 1em;
+    position: relative;
 }
 
-a {
-  color: #00B7FF;
+.field-container > img {
+    max-width: 100% !important;
+    z-index: 10;
+}
+
+.field-container > .players {
+    position: absolute;
+    z-index: 20;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.field-container > .players > .row {
+    height: 25%;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.field-container > .players > .row:last-child {
+    height: 10%;
+}
+
+a.player > img {
+    border: 2px solid rgb(240, 240, 240);
+    border-radius: 50%;
+    background: rgb(240, 240, 240);
+    box-shadow: 2px 2px 4px 3px rgb(50, 50, 50);
+}
+
+@media only screen and (min-width: 992px) {
+    a.player > img {
+        width: 5.8em;
+        height: 6.8em;
+        padding: .2em 1em;
+    }
+
+    a.player {
+        margin-left: 2em;
+        margin-right: 2em;
+    }
+}
+
+@media (max-width: 991px) and (min-width: 600px) {
+    a.player > img {
+        width: 4.5em;
+        height: 5.8em;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    a.player > img {
+        width: 4.8em;
+        height: 5.4em;
+        padding: .2em .8em;
+    }
+
+    .two-players > a.player {
+        margin-left: 2em;
+        margin-right: 2em;
+    }
+
+    .three-players > a.player {
+        margin-left: 1em;
+        margin-right: 1em;
+    }
+
+    .four-players > a.player {
+        margin-left: .5em;
+        margin-right: .5em;
+    }
+
+    .four-players > a.player:first-child {
+        margin-right: 0;
+    }
+
+    .four-players > a.player:last-child {
+        margin-left: 0;
+    }
+
+    .del > .player > img {
+        margin-top: 4em;
+    }
+
+    .med > .player > img {
+        margin-top: 4em;
+    }
+
+    .def > .player > img {
+        margin-top: 3.5em;
+    }
+
+    .por > .player > img {
+        margin-top: 1.5em;
+    }
 }
