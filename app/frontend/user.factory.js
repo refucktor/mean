@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('module')
+        .module('corner')
         .factory('userFactory', userFactory);
 
     userFactory.$inject = ['$http'];
@@ -22,7 +22,7 @@
                 .catch(getMyTeamFailed);
 
             function getMyTeamComplete(response) {
-                return response.data.results;
+                return response.data;
             }
 
             function getMyTeamFailed(error) {

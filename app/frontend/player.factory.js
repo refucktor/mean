@@ -10,19 +10,19 @@
     /* @ngInject */
     function playerFactory($http) {
         var $$ = {
-            getLocalPlayer: getLocalPlayer
+            getTeamPlayer: getTeamPlayer
         };
         return $$;
 
         ////////////////
 
-        function getLocalPlayer(playerId) {
+        function getTeamPlayer(playerId) {
             return $http.get('/api/player/' + playerId)
                 .then(getLocalPlayerComplete)
                 .catch(getLocalPlayerFailed);
 
             function getLocalPlayerComplete(response) {
-                return response.data.results;
+                return response.data;
             }
 
             function getLocalPlayerFailed(error) {
