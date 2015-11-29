@@ -38,26 +38,26 @@ module.exports = function(app){
         user.name = "Hector Manuel";
         Player.find({pos: 'DEL'}, null, {limit: 5}, function (err, data) {
             for (var i = 0; i < data.length; i++) {
-                user.team.del.push({player: data[i]._id, reg: true});
+                user.team.push({player: data[i]._id, reg: true});
 
             }
         });
         console.log(user.team);
         Player.find({pos: 'MED'}, null, {limit: 6}, function (err, data) {
             for (var i = 0; i < data.length; i++) {
-                user.team.med.push({player: data[i], reg: true})
+                user.team.push({player: data[i], reg: true})
 
             }
         });
         Player.find({pos: 'DEF'}, null, {limit: 6}, function (err, data) {
             for (var i = 0; i < data.length; i++) {
-                user.team.def.push({player: data[i]._id, reg: true})
+                user.team.push({player: data[i]._id, reg: true})
 
             }
         });
         Player.find({pos: 'POR'}, null, {limit: 2}, function (err, data) {
             for (var i = 0; i < data.length; i++) {
-                user.team.por.push({player: data[i]._id, reg: true})
+                user.team.push({player: data[i]._id, reg: true})
 
             }
             user.save(function (err) {

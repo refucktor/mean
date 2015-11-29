@@ -30,12 +30,7 @@ var UserSchema = new Schema({
     name     : { type: String, require: true },
     lastName : { type: String, require: true },
     sex      : { type: String, require: true },
-    team: {
-        del: [{player: {type: Schema.ObjectId, ref: 'Player'}, reg: {type: Boolean}}],
-        med: [{player: {type: Schema.ObjectId, ref: 'Player'}, reg: {type: Boolean}}],
-        def: [{player: {type: Schema.ObjectId, ref: 'Player'}, reg: {type: Boolean}}],
-        por: [{player: {type: Schema.ObjectId, ref: 'Player'}, reg: {type: Boolean}}]
-    }
+    team: [{player: {type: Schema.ObjectId, ref: 'Player'}, reg: {type: Boolean}}]
 });
 
 module.exports = {
