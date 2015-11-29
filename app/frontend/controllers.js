@@ -22,7 +22,6 @@
                 .then(onGetUsersSuccess);
         }
         function onGetUsersSuccess (retrievedData) {
-            console.log(retrievedData);
             $$.users = retrievedData;
             //console.log($$.comments);
         }
