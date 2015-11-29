@@ -3,6 +3,7 @@
 
     angular
         .module('corner')
+        .controller('ProfileController', ProfileController)
         .controller('ManagerController', ManagerController);
 
     function ManagerController (cw_services) {
@@ -25,6 +26,10 @@
             $$.users = retrievedData;
             //console.log($$.comments);
         }
+
+    }
+
+    function ProfileController () {
 
     }
 })();
