@@ -12,9 +12,14 @@ html(lang='en', ng-app='corner')
 
     script(src="/angular.js")
     script(src="/angular-route.js")
-    script(src="/frontend/module.js")
-    script(src="/frontend/controllers.js")
-    script(src="/frontend/services.js")
+    //MODULE
+    script(src="/frontend/corner.module.js")
+    //FACTORY
+    script(src="/frontend/user.factory.js")
+    script(src="/frontend/player.factory.js")
+    //CONTROLLER
+    script(src="/frontend/profile.controller.js")
+    script(src="/frontend/manager.controller.js")
 
   body
     include navbar
