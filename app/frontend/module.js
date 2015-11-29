@@ -9,7 +9,11 @@
 
     function config ($routeProvider) {
         $routeProvider
-            .when('/users', {templateUrl: 'frontend_views/test.html', controller: 'CWController', controllerAs:"cw"})
+            .when('/users', {
+                templateUrl: 'frontend_views/test.html',
+                controller: 'CWController',
+                controllerAs:"cw"
+            })
             .otherwise({ redirectTo: '/' });
     }
 })();
