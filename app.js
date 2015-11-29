@@ -30,6 +30,7 @@ require('./app/routes.js')(app);
 app.use('/jquery.min.js', express.static(__dirname + '/node_modules/jquery/dist/jquery.min.js'));
 app.use('/angular.js', express.static(__dirname + '/node_modules/angular/angular.js'));
 app.use('/angular-route.js', express.static(__dirname + '/node_modules/angular-route/angular-route.js'));
+app.use('/materialize', express.static(__dirname + '/node_modules/materialize-css/dist'));
 
 // view engine setup ===============================================================
 app.set('views', path.join(__dirname, 'views'));
