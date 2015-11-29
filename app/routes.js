@@ -1,6 +1,7 @@
 var models = require('./models/models');
 var User = models.User;
 var Performance = models.Performance;
+var Player = models.Player;
 module.exports = function(app){
 
     // JSON API ----------------------------------------------------------------
@@ -34,6 +35,18 @@ module.exports = function(app){
         user.save(function(err){
             if(err) console.log(err);
         })
+    });
+
+    // JSON API ----------------------------------------------------------------
+    // get a player
+    app.get('/api/player/:id', function (req, res) {
+        var playerId = req.params.id;
+
+        Player.findById(playerId, function (err, model) {
+            if (err) console.log('api Error: ' + err);
+
+            res.json(model);
+        });
     });
 
 
