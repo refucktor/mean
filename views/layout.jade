@@ -3,8 +3,8 @@ html(lang='en', ng-app='corner')
   head
     meta(charset='utf-8')
     meta(name='viewport', content='width=device-width, initial-scale=1, user-scalable=no')
-    title cubaweekly
-    link(rel='stylesheet', href='/stylesheets/style.css')
+    title corner
+
     link(rel='stylesheet', href='/materialize/css/materialize.css')
 
     script(src="/jquery.min.js")
@@ -15,5 +15,9 @@ html(lang='en', ng-app='corner')
     script(src="/frontend/module.js")
     script(src="/frontend/controllers.js")
     script(src="/frontend/services.js")
+
   body(ng-controller="CWController")
+    include navbar
     block content
+
+    script(src="/scripts/setup.js")
