@@ -38,8 +38,7 @@
     myTeam.$inject = ['userFactory'];
     /* @ngInject */
     function myTeam (userFactory) {
-        //return userFactory.getMyTeam();
-        return {};
+        return userFactory.getMyTeam();
     }
 
     player.$inject = ['playerFactory', '$route'];

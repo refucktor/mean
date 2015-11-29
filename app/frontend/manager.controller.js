@@ -10,7 +10,7 @@
     /* @ngInject */
     function ManagerController(myTeam, player, playerFactory) {
         var $$ = this;
-        if (myTeam) $$.myTeam = myTeam ;
+        $$.myTeam = myTeam ;
         $$.player = player;
 
         activate();
