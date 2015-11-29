@@ -9,11 +9,16 @@
 
     function config ($routeProvider) {
         $routeProvider
-            .when('/users', {
-                templateUrl: 'frontend_views/test.html',
-                controller: 'CWController',
-                controllerAs:"cw"
+            .when('/profile', {
+                templateUrl: 'frontend_views/profile.jade',
+                controller: 'ProfileController',
+                controllerAs:"pc"
             })
-            .otherwise({ redirectTo: '/' });
+            .when('/manager', {
+                templateUrl: 'frontend_views/manager.jade',
+                controller: 'ManagerController',
+                controllerAs:"mc"
+            })
+            .otherwise({ redirectTo: '/profile' });
     }
 })();

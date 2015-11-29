@@ -3,9 +3,9 @@
 
     angular
         .module('corner')
-        .controller('CWController', CWController);
+        .controller('ManagerController', ManagerController);
 
-    function CWController (cw_services) {
+    function ManagerController (cw_services) {
         var $$ = this;
 
         activate();
