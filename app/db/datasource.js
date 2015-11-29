@@ -23,7 +23,7 @@ module.exports = {
             firstName: "Pedro",
             lastName: "Pedro",
             pos: "DEL",
-            avatar: "/avatars/22254.jpg",
+            avatar: "/avatars/29632.jpg",
             init_value: 1000000,
             act_value: 1000000
         },
