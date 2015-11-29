@@ -2,6 +2,7 @@ var models = require('./models/models');
 var User = models.User;
 var Performance = models.Performance;
 var Player = models.Player;
+var DataSource = require('./db/datasource');
 module.exports = function(app){
 
     // JSON API ----------------------------------------------------------------
@@ -35,33 +36,24 @@ module.exports = function(app){
         var user = new User();
         user.username = "hmvalcarcel";
         user.name = "Hector Manuel";
-        Player.find({pos: 'DEL'}, null, {limit: 4}, function (err, data) {
+        Player.find({pos: 'DEL'}, null, {limit: 5}, function (err, data) {
             for (var i = 0; i < data.length; i++) {
                 user.team.del.push({player: data[i]._id, reg: true});
 
             }
-            user.save(function (err) {
-                if (err) console.log(err);
-            })
         });
         console.log(user.team);
-        Player.find({pos: 'MED'}, null, {limit: 4}, function (err, data) {
+        Player.find({pos: 'MED'}, null, {limit: 6}, function (err, data) {
             for (var i = 0; i < data.length; i++) {
                 user.team.med.push({player: data[i], reg: true})
 
             }
-            user.save(function (err) {
-                if (err) console.log(err);
-            })
         });
-        Player.find({pos: 'DEF'}, null, {limit: 5}, function (err, data) {
+        Player.find({pos: 'DEF'}, null, {limit: 6}, function (err, data) {
             for (var i = 0; i < data.length; i++) {
                 user.team.def.push({player: data[i]._id, reg: true})
 
             }
-            user.save(function (err) {
-                if (err) console.log(err);
-            })
         });
         Player.find({pos: 'POR'}, null, {limit: 2}, function (err, data) {
             for (var i = 0; i < data.length; i++) {
@@ -121,6 +113,17 @@ module.exports = function(app){
 
             res.json(model);
         });
+    });
+
+    // JSON API ----------------------------------------------------------------
+    // get realplayers
+    app.get('/api/realplayers', function (req, res) {
+        for (var i = 0; i < DataSource.players.length; i++) {
+            var temp = new Player(DataSource.players[i]);
+            temp.save(function (err, data) {
+                if (err) console.log(err);
+            })
+        }
     });
 
     // JSON API ----------------------------------------------------------------
