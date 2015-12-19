@@ -41,6 +41,8 @@
                 </div>
 
             </div>
+
+
             <div id="player-details" class="modal bottom-sheet green lighten-4">
                 <img ng-src="{{ mc.player.avatar }}" class="circle responsive-img player-img z-depth-3">
 
@@ -48,6 +50,16 @@
                     <h4>{{ mc.player.firstName }} {{ mc.player.lastName }}</h4>
 
                     <p>A bunch of text</p>
+
+                    <div class="players-notreg">
+                        <a class="player"
+                            ng-repeat="(k,p) in mc.myTeam track by p._id"
+                            ng-if="p.player.pos == mc.player.pos && !p.reg">
+
+                            <img ng-src="{{p.player.avatar}}" class="responsive-img">
+                        </a>
+                    </div>
+
                 </div>
                 <div class="modal-footer green lighten-4">
                     <a href="" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>

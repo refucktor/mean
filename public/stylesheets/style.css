@@ -32,7 +32,7 @@
 a.player > img {
     border: 2px solid rgb(240, 240, 240);
     border-radius: 50%;
-    background: rgb(240, 240, 240);
+    background: #F8F7FD;
     box-shadow: 2px 2px 4px 3px rgb(50, 50, 50);
 }
 
@@ -60,9 +60,15 @@ a.player > img {
 
 .modal.bottom-sheet > img {
     position: relative;
-    /*top: -6em;*/
-    background: white;
+    background: #F8F7FD;
 }
+
+/***** Changing Player Reg *****/
+.modal.bottom-sheet > .modal-content > .players-notreg {
+    display: inline;
+}
+
+/***** End Changing Player Reg *****/
 
 /***** End Manager view *****/
 
@@ -89,9 +95,9 @@ a.player > img {
 
 @media only screen and (max-width: 600px) {
     a.player > img {
-        width: 4.8em;
-        height: 5.4em;
-        padding: .2em .8em;
+        width: 4.9em;
+        height: 4.9em;
+        padding: 0 .8em;
     }
 
     .two-players > a.player {
